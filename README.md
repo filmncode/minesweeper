@@ -2,6 +2,8 @@
 
 A Minesweeper game you play in the terminal. It uses only the Python standard library, so there is nothing to install with pip.
 
+![Expert board with an opened patch](docs/screenshot.png)
+
 ## Requirements
 
 - Python 3.10 or newer
