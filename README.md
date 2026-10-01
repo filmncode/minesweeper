@@ -23,7 +23,17 @@ brew install python
 
 ## Install
 
-Clone the private repository and start a game:
+With Homebrew, from this private repository (GitHub SSH access is required, the same as cloning):
+
+```bash
+brew tap filmncode/minesweeper git@github.com:filmncode/minesweeper.git
+brew install mines
+mines
+```
+
+To follow `main` instead of a pinned release, install with `brew install --HEAD mines`. `brew upgrade mines` then picks up new commits. A pinned release is the `revision` in `Formula/mines.rb`; bump `version` and `revision` together when cutting the next one.
+
+Or run it from a checkout:
 
 ```bash
 git clone git@github.com:filmncode/minesweeper.git
@@ -40,16 +50,16 @@ The menu lets you pick a board:
 | Expert | 16×30 | 99 |
 | Custom | up to 24×36 | you choose |
 
-You can also skip the menu:
+You can also skip the menu. `mines` and `python3 minesweeper.py` take the same options:
 
 ```bash
-python3 minesweeper.py --rows 16 --cols 30 --mines 99
+mines --rows 16 --cols 30 --mines 99
 ```
 
 `--seed` replays a layout. The same seed and the same first open produce the same board. A finished game prints its seed.
 
 ```bash
-python3 minesweeper.py --rows 9 --cols 9 --mines 10 --seed 4
+mines --rows 9 --cols 9 --mines 10 --seed 4
 ```
 
 ## How to play
